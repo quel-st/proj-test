@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 
 
@@ -17,12 +18,19 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id; 
     @Column(length = 1000, nullable = false)
+    @NotBlank(message = "Campo nome não pode ser em branco")
     private String nome;
     @Column(length = 3000)
+    @NotBlank(message = "Campo email não pode ser em branco")
     private String email;
+    @Column(length = 3000)
+    @NotBlank(message = "Campo telefone não pode ser em branco")
     private String telefone;
+    @Column(length = 3000)
+    @NotBlank(message = "Campo CNPJ não pode ser em branco")
     private String cnpj;
     @Column(length = 3000)
+    @NotBlank(message = "Campo Endereço não pode ser em branco")
     private String endereco;
 
     public long getId() {
