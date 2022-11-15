@@ -26,4 +26,19 @@ public class ClienteServiceImpl implements ClienteService {
         return repositorio.save(cliente);
     }
 
+    @Override
+    public Cliente findById(long id) {
+        var result = repositorio.findById(id);
+        if(result.isPresent()){
+            return result.get();
+        }
+        return new Cliente();
+    }
+
+    @Override
+    public List<Cliente> findByNome(String nome){
+        return repositorio.findByNomeIgnoreCaseContaining(nome);
+    }
+
+
 }
