@@ -40,5 +40,9 @@ public class ClienteServiceImpl implements ClienteService {
         return repositorio.findByNomeIgnoreCaseContaining(nome);
     }
 
+    @Override
+    public void delete(long id) {
+        repositorio.deleteById(id);
+    }
 
 }

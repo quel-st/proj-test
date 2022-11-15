@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -64,7 +65,25 @@ public class ClienteControllerAPI {
     }
 
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Cliente> update(@PathVariable long id, @RequestBody Cliente clienteAlt){
+        var clienteAntigo = service.findById(id);
 
+        if(clienteAntigo.getId() == 0){
+            return ResponseEntity.notFound().build();
+        }
+
+        clienteAntigo.setNome(clienteAlt.getNome());
+        clienteAntigo.setEmail(clienteAlt.getEmail());
+        clienteAntigo.setTelefone(clienteAlt.getTelefone());
+        clienteAntigo.setCnpj(clienteAlt.getCnpj());
+        clienteAntigo.setEndereco(clienteAlt.getEndereco());
+
+        service.save(clienteAntigo);
+        return new ResponseEntity<Cliente>(clienteAntigo, HttpStatus.OK);
+
+
+    }
 
     
 
