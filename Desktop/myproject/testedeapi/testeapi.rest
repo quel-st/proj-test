@@ -8,25 +8,33 @@ GET http://localhost:8080/api/v1/clientes/1
 GET http://localhost:8080/api/v1/clientes/?nome=ze
 ###
 
-POST http://localhost:8080/api/v1/clientesContent-Type:application/json
+POST http://localhost:8080/api/v1/clientes
+Content-Type:application/json
 
 {
-    "nome":"Karbi", "email":"", "telefone":"", "cnpj":"" , "endereco":"rua mukaka da silva, 800"{
-    "id":1
+    "nome":"Karbi", 
+    "email":"fdsgsdg", 
+    "telefone":"121212", 
+    "cnpj":"12121212121" , 
+    "endereco":"rua mukaka da silva, 800"{
+    "id": 1
     }
 }
 
 ###
 
-PUT http://localhost:8080/api/v1/clientes/1 Content-Type:application/json
+PUT http://localhost:8080/api/v1/clientes/1Content-Type:application/json
 
 {
-"nome": "Tio Patinhas da Silva Sauro", "endereco": "Rua lululul 700", "sexo": "Masculino", "dataNascimento": "2022-10-27", "cidadeResidencia": {
-
-"id": 2
+    "nome":"Kamini", 
+    "email":"fd65473", 
+    "telefone":"1267574372", 
+    "cnpj":"126574721" , 
+    "endereco":"rua mukaka da silva, 800"{
+    "id": 1
+    }
 }
 
-}
 ###
 
 DELETE http://localhost:8080/api/v1/clientes/3
