@@ -1,0 +1,40 @@
+
+GET http://localhost:8080/api/v1/clientes
+###
+
+GET http://localhost:8080/api/v1/clientes/1
+###
+
+GET http://localhost:8080/api/v1/clientes/?nome=ze
+###
+
+POST http://localhost:8080/api/v1/clientes
+Content-Type:application/json
+
+{
+    "nome":"Karbi", 
+    "email":"fdsgsdg", 
+    "telefone":"121212", 
+    "cnpj":"12121212121" , 
+    "endereco":"rua mukaka da silva, 800"{
+    "id": 1
+    }
+}
+
+###
+
+PUT http://localhost:8080/api/v1/clientes/1Content-Type:application/json
+
+{
+    "nome":"Kamini", 
+    "email":"fd65473", 
+    "telefone":"1267574372", 
+    "cnpj":"126574721" , 
+    "endereco":"rua mukaka da silva, 800"{
+    "id": 1
+    }
+}
+
+###
+
+DELETE http://localhost:8080/api/v1/clientes/3
